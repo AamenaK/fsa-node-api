@@ -7,10 +7,13 @@ const morgan = require('morgan');
 const config = require('./config/index');
 const deafultRouter = require('./routes/defaultRouter');
 const userRouter = require('./routes/userRouter');
+const cors = require('cors');
 
 // adding a comment for feature branch
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors());
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
