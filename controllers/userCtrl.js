@@ -100,6 +100,7 @@ const signin = async (req, res) => {
         const response = {
             firstName: dbUser.firstName,
             lastName: dbUser.lastName,
+            role: dbUser.role,
             token,
             email: dbUser.email
         }
