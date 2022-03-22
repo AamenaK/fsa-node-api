@@ -59,6 +59,7 @@ const getUserByEmail = (email) => {
 const getUserCount = (options) => {
     const { name, qualification, degree, skills } = options;
     const filter = {
+        role:0,
         $or: [
             { firstName: { $regex: name, $options: 'i' } },
             { lastName: { $regex: name, $options: 'i' } },
