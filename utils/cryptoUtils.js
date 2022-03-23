@@ -14,7 +14,7 @@ const getToken = (user) => {
     const { email, role } = user;
     return jwt.sign({ email, role },
         config.jwtSecret,
-        { expiresIn: '24h' });
+        { expiresIn: '10m' });
 
 }
 
