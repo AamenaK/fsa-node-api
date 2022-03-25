@@ -46,6 +46,7 @@ const getUsers = (pageIndex, pageSize, options) => {
     const sort = options.sort ? { [options.sort]: options.sortDir || 1 } : { updatedAt: -1 };
 
     return UserModel.find(filter, projection)
+        .collation({ locale: "en" })
         .sort(sort)
         .skip(skipRows)
         .limit(pageSize);
