@@ -35,7 +35,7 @@ const getUsers = (pageIndex, pageSize, options) => {
             { lastName: { $regex: name, $options: 'i' } },
         ]
     };
-    if (degree) filter.degree = degree;
+    if (!isNaN(degree)) filter.degree = degree;
     if (qualification) filter.qualification = qualification;
     if (skills) {
         const skillsArr = skills.split(',');
@@ -67,7 +67,7 @@ const getUserCount = (options) => {
             { lastName: { $regex: name, $options: 'i' } },
         ]
     };
-    if (degree) filter.degree = degree;
+    if (!isNaN(degree)) filter.degree = degree;
     if (qualification) filter.qualification = qualification;
     if (skills) {
         const skillsArr = skills.split(',');
