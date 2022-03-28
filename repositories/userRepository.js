@@ -64,7 +64,7 @@ const getUserCount = (options) => {
         role:0,
         $or: [
             { firstName: { $regex: name, $options: 'i' } },
-            { lastName: { $regex: name, $options: 'i' } },
+            { lastName: { $regex: name, $options: 'i' } },  
         ]
     };
     if (degree) filter.degree = degree;
