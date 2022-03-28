@@ -60,11 +60,10 @@ const getUsers = async (req, res) => {
 
         const mappedUsers = users.map(user => {
             const jsonUser = user.toJSON();
-            const resume = jsonUser.resume ?
-            `${req.protocol}://${req.get('host')}/uploads/${user.resume}` : undefined
+            const resume = jsonUser.resume ? `${req.protocol}://${req.get('host')}/uploads/${user.resume}` : undefined
             return {
                 ...jsonUser,
-                resume 
+                resume
             }
         });
 
