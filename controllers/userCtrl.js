@@ -38,6 +38,7 @@ const update = async (req, res) => {
         res.status(204);
         res.send();
     } catch (e) {
+        console.log(res)
         res.status(500).send('Internal Server Error');
     }
 }
